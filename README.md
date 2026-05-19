@@ -78,3 +78,21 @@ For methodology, dataset details, per-sample qualitative analysis, the discussio
 - GroundingDINO — Liu et al., 2024 ([arXiv:2303.05499](https://arxiv.org/abs/2303.05499))
 - SAM 2 — Ravi et al., 2024 ([arXiv:2408.00714](https://arxiv.org/abs/2408.00714))
 - Stable Diffusion / Latent Diffusion Models — Rombach et al., 2022 (CVPR)
+
+## License
+
+The code in this repository (notebooks, scripts, configuration) is released under the **Apache License 2.0** — see [LICENSE](./LICENSE). This repo contains no model weights, trained adapters, or dataset samples; only the code to produce and use them.
+
+### Third-party components
+
+The pipeline loads or fine-tunes the following components at runtime. Each has its own license that governs your use of that component:
+
+| Component | Source | License |
+|---|---|---|
+| Qwen2.5-VL-3B-Instruct | [`Qwen/Qwen2.5-VL-3B-Instruct`](https://huggingface.co/Qwen/Qwen2.5-VL-3B-Instruct) | Qwen Research License (research / non-commercial) |
+| Stable Diffusion 1.5 Inpainting | [`runwayml/stable-diffusion-inpainting`](https://huggingface.co/runwayml/stable-diffusion-inpainting) | CreativeML OpenRAIL-M |
+| SAM 2 | [`facebookresearch/sam2`](https://github.com/facebookresearch/sam2) | Apache 2.0 |
+| GroundingDINO (`grounding-dino-tiny`) | [`IDEA-Research/grounding-dino-tiny`](https://huggingface.co/IDEA-Research/grounding-dino-tiny) | Apache 2.0 |
+| ImgEdit dataset | [`sysuyy/ImgEdit`](https://huggingface.co/datasets/sysuyy/ImgEdit), [`sysuyy/ImgEdit_recap_mask`](https://huggingface.co/datasets/sysuyy/ImgEdit_recap_mask) | See dataset cards |
+
+Because Qwen2.5-VL-3B is research-licensed, the assembled pipeline as a whole is not suitable for commercial deployment without substituting a commercially-licensed VLM. Any adapter weights produced by running this code are derivatives of their base models and inherit those licenses; label them accordingly if you publish them.
